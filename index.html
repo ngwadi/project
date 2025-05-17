@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub Login Demo</title>
+</head>
+<body>
+  <h1>Login with GitHub</h1>
+  <button id="loginBtn">Login with GitHub</button>
+
+  <h2>User Profile</h2>
+  <pre id="profile"></pre>
+
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const profilePre = document.getElementById('profile');
+
+    loginBtn.addEventListener('click', () => {
+      // Redirect to your backend's GitHub login route
+      window.location.href = 'http://127.0.0.1:5000/login/github';
+    });
+
+    // After login, you can fetch the user info from your backend if you want
+    // (This example assumes your backend returns JSON at /callback endpoint)
+    // But since /callback redirects with code, you might want to handle that separately.
+  </script>
+</body>
+</html>
