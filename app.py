@@ -16,6 +16,10 @@ CORS(app)
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
+@app.route('/')
+def home():
+    return '<h2>Welcome to the GitHub OAuth App</h2><a href="/login/github">Login with GitHub</a>'
+
 @app.route("/login/github")
 def login_github():
     github_auth_url = (
